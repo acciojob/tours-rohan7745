@@ -85,7 +85,7 @@ const App = () => {
               <p className="tour-info" id={`tour-item-para-${tour.id}`}>
                 {tour.showMore ? tour.info : tour.info.slice(0, 200)}
                 {tour.info.length > 200 && (
-                  <button onClick={() => handleShowMore(tour.id)}>
+                  <button id={`see-more-${tour.id}`} onClick={() => handleShowMore(tour.id)}>
                     {tour.showMore ? 'See less' : 'See more'}
                   </button>
                 )}

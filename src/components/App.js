@@ -81,21 +81,18 @@ const App = () => {
             <div key={tour.id} className="single-tour">
               <img src={tour.image} alt={tour.name} />
               <h2>{tour.name}</h2>
-              <p className="tour-info">
-                {tour.showMore ? tour.info : tour.info.slice(0, 200)}
-                {tour.info.length > 200 && (
-                  <button onClick={() => handleShowMore(tour.id)}>
-                    {tour.showMore ? 'See less' : 'See more'}
-                  </button>
-                )}
-              </p>
+              <p id={`tour-item-para-${tour.id}`} className="tour-info">
+   {tour.showMore ? tour.info : tour.info.slice(0, 200)}
+   {tour.info.length > 200 && (
+      <button onClick={() => handleShowMore(tour.id)}>
+         {tour.showMore ? 'See less' : 'See more'}
+      </button>
+   )}
+</p>
               <p className="tour-price">${tour.price}</p>
-              <button
-                className="delete-btn-rec6d6T3q5EBIdCfD"
-                onClick={() => handleDeleteTour(tour.id)}
-              >
-                Delete Tour
-              </button>
+              <button id={`delete-btn-${tour.id}`} className="delete-btn" onClick={() => handleDeleteTour(tour.id)}>
+   Delete Tour
+</button>
             </div>
           ))}
         </div>
